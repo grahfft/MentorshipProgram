@@ -29,6 +29,9 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
 
+    compile('org.projectlombok:lombok:1.18.8')
+    annotationProcessor('org.projectlombok:lombok:1.18.8')
+
     testCompile("junit:junit")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
