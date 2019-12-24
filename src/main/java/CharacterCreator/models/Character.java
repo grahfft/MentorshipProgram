@@ -2,7 +2,6 @@ package CharacterCreator.models;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration;
 
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class Character {
 
     private Integer Charisma;
 
-    private Class Class;
+    private CharacterClass CharacterClass;
 
     private Race Race;
 

@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Class {
+public class CharacterClass {
     private String Name;
     private String[] SubClasses;
     private String Abilities;
