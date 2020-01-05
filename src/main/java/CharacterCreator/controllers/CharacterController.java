@@ -16,7 +16,7 @@ public class CharacterController {
     CharacterService characterService;
 
     @GetMapping(value = "/characters")
-    public ResponseEntity<List<Character>> GetChracters() {
+    public ResponseEntity<List<Character>> GetCharacters() {
         List<Character> characters = new ArrayList<Character>();
         return ResponseEntity.ok(this.characterService.GetAllCharacters());
     }
