@@ -1,0 +1,7 @@
+{
+  "classOptions": ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Mystic", "Paladin",
+    "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"],
+  "raceOptions": ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"],
+  "alignmentOptions": ["Lawful good", "Neutral good", "Chaotic good", "Lawful neutral", "Neutral", "Chaotic neutral",
+    "Lawful evil", "Neutral evil", "Chaotic evil"]
+}

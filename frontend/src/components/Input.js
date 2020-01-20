@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 
 const Input = (props) => {
   return (
-    <div className="form-group">
+    <div className="input-component">
       <label htmlFor={props.name} className="form-label">{props.title}</label>
       <input
-        className="form-input"
-        id={props.name}
         name={props.name}
         type={props.type}
         value={props.value}
@@ -19,8 +17,9 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
+  type: PropTypes.oneOf(['text', 'number']).isRequired,
   name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   value: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string

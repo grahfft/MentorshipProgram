@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Select = (props) => {
   return(
-    <div className="form-group">
+    <div className="select-component">
       <label htmlFor={props.name}> {props.title} </label>
       <select
         name={props.name}
