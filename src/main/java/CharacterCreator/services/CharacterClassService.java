@@ -2,7 +2,8 @@ package CharacterCreator.services;
 
 import CharacterCreator.models.ClassModels.CharacterClass;
 import CharacterCreator.models.ClassModels.CharacterSubclass;
-import CharacterCreator.repositories.CharacterClassRepository;
+import CharacterCreator.repositories.InMemoryRepositories.CharacterClassRepository;
+import CharacterCreator.repositories.Interfaces.ICharacterClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +12,10 @@ import java.util.List;
 @Service
 public class CharacterClassService {
 
-    private CharacterClassRepository characterClassRepository;
+    private ICharacterClassRepository characterClassRepository;
 
     @Autowired
-    public CharacterClassService(CharacterClassRepository characterClassRepository) {
+    public CharacterClassService(ICharacterClassRepository characterClassRepository) {
         this.characterClassRepository = characterClassRepository;
     }
 

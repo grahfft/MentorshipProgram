@@ -1,8 +1,7 @@
 package CharacterCreator.services;
 
-import CharacterCreator.models.CharacterModels.Character;
 import CharacterCreator.models.Race;
-import CharacterCreator.repositories.RaceRepository;
+import CharacterCreator.repositories.InMemoryRepositories.RaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
