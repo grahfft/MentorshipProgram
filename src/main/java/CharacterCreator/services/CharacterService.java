@@ -1,11 +1,10 @@
 package CharacterCreator.services;
 
-import CharacterCreator.models.Character;
+import CharacterCreator.models.CharacterModels.Character;
 import CharacterCreator.repositories.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 

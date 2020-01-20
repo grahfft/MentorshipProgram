@@ -1,4 +1,4 @@
-package CharacterCreator.models;
+package CharacterCreator.models.CharacterModels;
 
 import lombok.Getter;
 

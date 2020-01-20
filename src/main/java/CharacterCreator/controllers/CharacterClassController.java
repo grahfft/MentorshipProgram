@@ -1,7 +1,7 @@
 package CharacterCreator.controllers;
 
-import CharacterCreator.models.CharacterClass;
-import CharacterCreator.models.CharacterSubclass;
+import CharacterCreator.models.ClassModels.CharacterClass;
+import CharacterCreator.models.ClassModels.CharacterSubclass;
 import CharacterCreator.services.CharacterClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

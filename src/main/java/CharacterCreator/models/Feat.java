@@ -7,5 +7,6 @@ import lombok.Setter;
 @Setter
 public class Feat {
     private String Name;
+    private StatBonuses bonuses;
     private String Description;
 }

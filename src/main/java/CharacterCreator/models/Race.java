@@ -7,5 +7,6 @@ import lombok.Setter;
 @Setter
 public class Race {
     private String Name;
+    private StatBonuses Bonuses;
     private String[] Abilities;
 }

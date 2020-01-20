@@ -1,12 +1,11 @@
 package CharacterCreator.controllers;
 
-import CharacterCreator.models.Character;
+import CharacterCreator.models.CharacterModels.Character;
 import CharacterCreator.services.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

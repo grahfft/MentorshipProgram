@@ -1,6 +1,6 @@
 package CharacterCreator.repositories;
 
-import CharacterCreator.models.Character;
+import CharacterCreator.models.CharacterModels.Character;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

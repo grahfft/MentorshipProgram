@@ -1,12 +1,12 @@
-package CharacterCreator.models;
+package CharacterCreator.models.ClassModels;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class CharacterClass {
+public class CharacterSubclass {
+    private String mainCharacterClass;
     private String Name;
-    private CharacterSubclass SubClass;
     private ClassAbility[] Abilities;
 }

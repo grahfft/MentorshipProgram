@@ -1,7 +1,7 @@
 package CharacterCreator.repositories;
 
-import CharacterCreator.models.CharacterClass;
-import CharacterCreator.models.CharacterSubclass;
+import CharacterCreator.models.ClassModels.CharacterClass;
+import CharacterCreator.models.ClassModels.CharacterSubclass;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
