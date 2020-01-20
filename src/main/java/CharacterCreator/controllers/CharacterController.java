@@ -10,14 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class CharacterController {
 
+    private CharacterService characterService;
+
     @Autowired
-    CharacterService characterService;
+    public CharacterController(CharacterService characterService) {
+        this.characterService = characterService;
+    }
 
     @GetMapping(value = "/characters")
     public ResponseEntity<List<Character>> GetCharacters() {
-        List<Character> characters = new ArrayList<Character>();
         return ResponseEntity.ok(this.characterService.GetAllCharacters());
     }
 

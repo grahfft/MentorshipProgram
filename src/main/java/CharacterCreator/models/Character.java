@@ -15,17 +15,7 @@ public class Character {
 
     private Integer Level;
 
-    private Integer Strength;
-
-    private Integer Dexterity;
-
-    private Integer Constitution;
-
-    private Integer Wisdom;
-
-    private Integer Intelligence;
-
-    private Integer Charisma;
+    private StatBlock StatBlock;
 
     private CharacterClass CharacterClass;
 
