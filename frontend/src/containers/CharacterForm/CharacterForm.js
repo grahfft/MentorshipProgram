@@ -44,7 +44,7 @@ class CharacterForm extends Component {
     this.setState( { [e.target.name]: e.target.value });
   }
   handleCreate(e) {
-    e.preventDefault()
+    e.preventDefault();
     const formPayload = {
       characterName: this.state.characterName,
       characterClass: this.state.characterClass,
@@ -57,7 +57,7 @@ class CharacterForm extends Component {
       wisdom: this.state.wisdom,
       intelligence: this.state.intelligence,
       charisma: this.state.charisma
-    }
+    };
     console.log('POST to backend', formPayload);
   }
   handleLoad() {
