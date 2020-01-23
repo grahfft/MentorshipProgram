@@ -20,7 +20,7 @@ Input.propTypes = {
   type: PropTypes.oneOf(['text', 'number']).isRequired,
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   handleChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string
 };

@@ -22,17 +22,7 @@ class CharacterForm extends Component {
       intelligence: 0,
       charisma: 0,
     };
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleClassSelect = this.handleClassSelect.bind(this);
-    this.handleRaceSelect = this.handleRaceSelect.bind(this);
-    this.handleAlignmentSelect = this.handleAlignmentSelect.bind(this);
-    this.handleExperienceChange = this.handleExperienceChange.bind(this);
-    this.handleStrengthChange = this.handleStrengthChange.bind(this);
-    this.handleDexterityChange = this.handleDexterityChange.bind(this);
-    this.handleConstitutionChange = this.handleConstitutionChange.bind(this);
-    this.handleWisdomChange = this.handleWisdomChange.bind(this);
-    this.handleIntelligenceChange = this.handleIntelligenceChange.bind(this);
-    this.handleCharismaChange = this.handleCharismaChange.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     this.handleLoad = this.handleLoad(this);
     this.handleQuit = this.handleQuit(this);
@@ -50,40 +40,9 @@ class CharacterForm extends Component {
       });
   }
 
-  handleNameChange(e) {
-    this.setState({ characterName: e.target.value }, () => console.log('name', this.state.characterName));
+  handleInput(e) {
+    this.setState( { [e.target.name]: e.target.value });
   }
-  handleClassSelect(e) {
-    this.setState({ characterClass: e.target.value }, () => console.log('characterClass', this.state.characterClass));
-  }
-  handleRaceSelect(e) {
-    this.setState({ race: e.target.value }, () => console.log('race', this.state.race));
-  }
-  handleAlignmentSelect(e) {
-    this.setState({ alignment: e.target.value }, () => console.log('alignment', this.state.alignment));
-  }
-  handleExperienceChange(e) {
-    this.setState({ experience: e.target.value }, () => console.log('currentExperience', this.state.experience));
-  }
-  handleStrengthChange(e) {
-    this.setState({ strength: e.target.value }, () => console.log('currentStrength', this.state.strength));
-  }
-  handleDexterityChange(e) {
-    this.setState({ dexterity: e.target.value }, () => console.log('currentDexterity', this.state.dexterity));
-  }
-  handleConstitutionChange(e) {
-    this.setState({ constitution: e.target.value }, () => console.log('currentConstitution', this.state.constitution));
-  }
-  handleWisdomChange(e) {
-    this.setState({ wisdom: e.target.value }, () => console.log('currentWisdom', this.state.wisdom));
-  }
-  handleIntelligenceChange(e) {
-    this.setState({ intelligence: e.target.value }, () => console.log('currentIntelligence', this.state.intelligence));
-  }
-  handleCharismaChange(e) {
-    this.setState({ charisma: e.target.value }, () => console.log('currentCharisma', this.state.charisma));
-  }
-
   handleCreate(e) {
     e.preventDefault()
     const formPayload = {
@@ -102,10 +61,8 @@ class CharacterForm extends Component {
     console.log('POST to backend', formPayload);
   }
   handleLoad() {
-
   }
   handleQuit() {
-
   }
 
   render() {
@@ -117,7 +74,7 @@ class CharacterForm extends Component {
           title={'Character Name'}
           name={'name'}
           value={this.state.characterName}
-          handleChange={this.handleNameChange}
+          handleChange={this.handleInput}
           placeholder={'Enter character name'}
         />
         <Select
@@ -125,7 +82,7 @@ class CharacterForm extends Component {
           name={'characterClass'}
           value={this.state.characterClass}
           options={this.state.classOptions}
-          handleChange={this.handleClassSelect}
+          handleChange={this.handleInput}
           placeholder={'Select class'}
         />
         <Select
@@ -133,7 +90,7 @@ class CharacterForm extends Component {
           name={'race'}
           value={this.state.race}
           options={this.state.raceOptions}
-          handleChange={this.handleRaceSelect}
+          handleChange={this.handleInput}
           placeholder={'Select race'}
         />
         <Select
@@ -141,7 +98,7 @@ class CharacterForm extends Component {
           name={'alignment'}
           value={this.state.alignment}
           options={this.state.alignmentOptions}
-          handleChange={this.handleAlignmentSelect}
+          handleChange={this.handleInput}
           placeholder={'Select alignment'}
         />
         <Input
@@ -149,49 +106,49 @@ class CharacterForm extends Component {
           title={'Experience points'}
           name={'currentExperience'}
           value={this.state.experience}
-          handleChange={this.handleExperienceChange}
+          handleChange={this.handleInput}
         />
         <Input
           type={'number'}
           title={'Strength'}
           name={'currentStrength'}
           value={this.state.strength}
-          handleChange={this.handleStrengthChange}
+          handleChange={this.handleInput}
         />
         <Input
           type={'number'}
           title={'Dexterity'}
           name={'currentDexterity'}
           value={this.state.dexterity}
-          handleChange={this.handleDexterityChange}
+          handleChange={this.handleInput}
         />
         <Input
           type={'number'}
           title={'Constitution'}
           name={'currentConstitution'}
           value={this.state.constitution}
-          handleChange={this.handleConstitutionChange}
+          handleChange={this.handleInput}
         />
         <Input
           type={'number'}
           title={'Wisdom'}
           name={'currentWisdom'}
           value={this.state.wisdom}
-          handleChange={this.handleWisdomChange}
+          handleChange={this.handleInput}
         />
         <Input
           type={'number'}
           title={'Intelligence'}
           name={'currentIntelligence'}
           value={this.state.intelligence}
-          handleChange={this.handleIntelligenceChange}
+          handleChange={this.handleInput}
         />
         <Input
           type={'number'}
           title={'Charisma'}
           name={'currentCharisma'}
           value={this.state.charisma}
-          handleChange={this.handleCharismaChange}
+          handleChange={this.handleInput}
         />
         <Button
           title={'Create'}
