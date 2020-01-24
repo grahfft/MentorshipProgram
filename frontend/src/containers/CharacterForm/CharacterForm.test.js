@@ -13,7 +13,7 @@ describe('CharacterForm', () => {
     expect(wrapper.find('.form-container')).toHaveLength(1);
   });
 
-  it('calls setState on character name', () => {
+  it('calls handleInput on Character Name', () => {
     expect(wrapper.state('characterName')).toBe('');
 
     const mockEvent = {
@@ -23,23 +23,8 @@ describe('CharacterForm', () => {
       }
     };
 
-    const character = {
-      characterName: 'Mike',
-      characterClass: '',
-      classOptions: [],
-      race: '',
-      raceOptions: [],
-      alignment: '',
-      alignmentOptions: [],
-      experience: 0,
-      strength: 0,
-      dexterity: 0,
-      constitution: 0,
-      wisdom: 0,
-      intelligence: 0,
-      charisma: 0,
-    };
     wrapper.instance().handleInput(mockEvent);
-    expect(wrapper.state()).toEqual(character);
-  })
+    expect(wrapper.state('characterName')).toEqual('Mike');
+  });
+
 });
