@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 import Button from '../../components/Button';
 
 class CharacterForm extends Component {
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.state = {
+    this.state ={
       characterName: '',
       characterClass: '',
       classOptions: [],
@@ -14,28 +15,18 @@ class CharacterForm extends Component {
       raceOptions: [],
       alignment: '',
       alignmentOptions: [],
-      level: 0,
-      experience: 0,
-      strength: 0,
-      dexterity: 0,
-      constitution: 0,
-      wisdom: 0,
-      intelligence: 0,
-      charisma: 0,
+      level: '',
+      experience: '',
+      strength: '',
+      dexterity: '',
+      constitution: '',
+      wisdom: '',
+      intelligence: '',
+      charisma: '',
+      message: null,
     };
-    this.handleCharacterName = this.handleCharacterName.bind(this);
-    this.handleLevel = this.handleLevel.bind(this);
-    this.handleExperience = this.handleExperience.bind(this);
-    this.handleStrength = this.handleStrength.bind(this);
-    this.handleDexterity = this.handleDexterity.bind(this);
-    this.handleConstitution = this.handleConstitution.bind(this);
-    this.handleWisdom = this.handleWisdom.bind(this);
-    this.handleIntelligence = this.handleIntelligence.bind(this);
-    this.handleCharisma = this.handleCharisma.bind(this);
-    this.handleInput = this.handleInput.bind(this);
+
     this.handleCreate = this.handleCreate.bind(this);
-    this.handleLoad = this.handleLoad(this);
-    this.handleQuit = this.handleQuit(this);
   }
 
   componentDidMount() {
@@ -50,178 +41,109 @@ class CharacterForm extends Component {
       });
   }
 
-  handleCharacterName(e) {
-    this.setState({ characterName: e.target.value });
-  }
-
-  handleLevel(e) {
-    this.setState({ level: e.target.value });
-  }
-
-  handleExperience(e) {
-    this.setState({ experience: e.target.value });
-  }
-
-  handleStrength(e) {
-    this.setState({ strength: e.target.value });
-  }
-
-  handleDexterity(e) {
-    this.setState({ dexterity: e.target.value });
-  }
-
-  handleConstitution(e) {
-    this.setState({ constitution: e.target.value });
-  }
-
-  handleWisdom(e) {
-    this.setState({ wisdom: e.target.value });
-  }
-
-  handleIntelligence(e) {
-    this.setState({ intelligence: e.target.value });
-  }
-
-  handleCharisma(e) {
-    this.setState({ charisma: e.target.value });
-  }
-
-  handleInput(e) {
-    this.setState( { [e.target.name]: e.target.value });
-  }
-
-  handleCreate(e) {
+  handleCreate = (e) => {
     e.preventDefault();
-    const formPayload = {
-      characterName: this.state.characterName,
-      characterClass: this.state.characterClass,
-      race: this.state.race,
-      alignment: this.state.alignment,
-      level: this.state.level,
-      experience: this.state.experience,
-      strength: this.state.strength,
-      dexterity: this.state.dexterity,
-      constitution: this.state.constitution,
-      wisdom: this.state.wisdom,
-      intelligence: this.state.intelligence,
-      charisma: this.state.charisma
-    };
-    console.log('POST to backend', formPayload);
+
+    // let character =  { characterName: this.state.characterName, characterClass: this.state.characterClass, race: this.state.race,
+    //   alignment: this.state.alignment, level: this.state.level, experience: this.state.experience, strength: this.state.strength,
+    //   dexterity: this.state.dexterity, constitution: this.state.constitution, wisdom: this.state.wisdom,
+    //   intelligence: this.state.intelligence, charisma: this.state.charisma };
+
+    const { characterName, characterClass, race, alignment, level, experience, strength, dexterity, constitution, wisdom,
+    intelligence, charisma} = this.state;
+
+    axios.post('http://localhost:8080/character', { characterName, characterClass, race, alignment, level, experience, strength, dexterity,
+      constitution, wisdom, intelligence, charisma })
+      .then(res => {
+        this.setState({message : 'Character added successfully.'});
+        this.props.history.push("/")
+      });
   }
 
-  handleLoad() {
-  }
-
-  handleQuit() {
-  }
+  onChange = (e) =>
+    this.setState({ [e.target.name]: e.target.value });
 
   render() {
     return (
-      <form className={'form-container'} onSubmit={this.handleCreate}>
+      <div>
         <h5 className={'title'}>Character Information</h5>
-        <Input
-          type={'text'}
-          title={'Character Name'}
-          name={'name'}
-          value={this.state.characterName}
-          handleChange={this.handleCharacterName}
-          placeholder={'Enter character name'}
-        />
-        <Select
-          title={'Class'}
-          name={'characterClass'}
-          value={this.state.characterClass}
-          options={this.state.classOptions}
-          handleChange={this.handleInput}
-          placeholder={'Select class'}
-        />
-        <Select
-          title={'Race'}
-          name={'race'}
-          value={this.state.race}
-          options={this.state.raceOptions}
-          handleChange={this.handleInput}
-          placeholder={'Select race'}
-        />
-        <Select
-          title={'Alignment'}
-          name={'alignment'}
-          value={this.state.alignment}
-          options={this.state.alignmentOptions}
-          handleChange={this.handleInput}
-          placeholder={'Select alignment'}
-        />
-        <Input
-          type={'number'}
-          title={'Level'}
-          name={'level'}
-          value={this.state.level}
-          handleChange={this.handleLevel}
-        />
-        <Input
-          type={'number'}
-          title={'Experience points'}
-          name={'currentExperience'}
-          value={this.state.experience}
-          handleChange={this.handleExperience}
-        />
-        <Input
-          type={'number'}
-          title={'Strength'}
-          name={'currentStrength'}
-          value={this.state.strength}
-          handleChange={this.handleStrength}
-        />
-        <Input
-          type={'number'}
-          title={'Dexterity'}
-          name={'currentDexterity'}
-          value={this.state.dexterity}
-          handleChange={this.handleDexterity}
-        />
-        <Input
-          type={'number'}
-          title={'Constitution'}
-          name={'currentConstitution'}
-          value={this.state.constitution}
-          handleChange={this.handleConstitution}
-        />
-        <Input
-          type={'number'}
-          title={'Wisdom'}
-          name={'currentWisdom'}
-          value={this.state.wisdom}
-          handleChange={this.handleWisdom}
-        />
-        <Input
-          type={'number'}
-          title={'Intelligence'}
-          name={'currentIntelligence'}
-          value={this.state.intelligence}
-          handleChange={this.handleIntelligence}
-        />
-        <Input
-          type={'number'}
-          title={'Charisma'}
-          name={'currentCharisma'}
-          value={this.state.charisma}
-          handleChange={this.handleCharisma}
-        />
-        <Button
-          title={'Create'}
-          action={this.handleCreate}
-        />
-        <Button
-          title={'Load'}
-          action={this.handleLoad}
-        />
-        <Button
-          title={'Quit'}
-          action={this.handleQuit}
-        />
-      </form>
+        <form>
+          <div className="form-group">
+            <label>Character Name: </label>
+            <input type="text" placeholder="Enter character name" name="characterName" value={this.state.characterName} onChange={this.onChange}/>
+          </div>
+
+          <Select
+            title={'Class: '}
+            name={'characterClass'}
+            value={this.state.characterClass}
+            options={this.state.classOptions}
+            handleChange={this.onChange}
+            placeholder={'Select class'}
+          />
+          <Select
+            title={'Race: '}
+            name={'race'}
+            value={this.state.race}
+            options={this.state.raceOptions}
+            handleChange={this.onChange}
+            placeholder={'Select race'}
+          />
+          <Select
+            title={'Alignment: '}
+            name={'alignment'}
+            value={this.state.alignment}
+            options={this.state.alignmentOptions}
+            handleChange={this.onChange}
+            placeholder={'Select alignment'}
+          />
+
+          <div className="form-group">
+            <label>Level: </label>
+            <input type="text" placeholder="Enter level" name="level" value={this.state.level} onChange={this.onChange}/>
+          </div>
+
+          <div className="form-group">
+            <label>Experience: </label>
+            <input type="text" placeholder="Enter experience" name="experience" value={this.state.experience} onChange={this.onChange}/>
+          </div>
+
+          <div className="form-group">
+            <label>Strength: </label>
+            <input type="text" placeholder="Enter strength" name="strength" value={this.state.strength} onChange={this.onChange}/>
+          </div>
+
+          <div className="form-group">
+            <label>Dexterity: </label>
+            <input type="text" placeholder="Enter dexterity" name="dexterity" value={this.state.dexterity} onChange={this.onChange}/>
+          </div>
+
+          <div className="form-group">
+            <label>Constitution: </label>
+            <input type="text" placeholder="Enter constitution" name="constitution" value={this.state.constitution} onChange={this.onChange}/>
+          </div>
+
+          <div className="form-group">
+            <label>Wisdom: </label>
+            <input type="text" placeholder="Enter wisdom" name="wisdom" value={this.state.wisdom} onChange={this.onChange}/>
+          </div>
+
+          <div className="form-group">
+            <label>Intelligence: </label>
+            <input type="text" placeholder="Enter intelligence" name="intelligence" value={this.state.intelligence} onChange={this.onChange}/>
+          </div>
+
+          <div className="form-group">
+            <label>Charisma: </label>
+            <input type="text" placeholder="Enter charisma" name="charisma" value={this.state.charisma} onChange={this.onChange}/>
+          </div>
+
+          <button className="btn btn-success" onClick={this.handleCreate}>Save</button>
+        </form>
+      </div>
     );
   }
 }
+
 
 export default CharacterForm;
