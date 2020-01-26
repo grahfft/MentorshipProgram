@@ -23,7 +23,7 @@ describe('CharacterForm', () => {
       }
     };
 
-    wrapper.instance().handleInput(mockEvent);
+    wrapper.instance().handleCharacterName(mockEvent);
     expect(wrapper.state('characterName')).toEqual('Mike');
   });
 
