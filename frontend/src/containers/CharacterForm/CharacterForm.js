@@ -41,24 +41,27 @@ class CharacterForm extends Component {
       });
   }
 
-  handleCreate = (e) => {
+  handleCreate = async (e) => {
     e.preventDefault();
 
-    // let character =  { characterName: this.state.characterName, characterClass: this.state.characterClass, race: this.state.race,
-    //   alignment: this.state.alignment, level: this.state.level, experience: this.state.experience, strength: this.state.strength,
-    //   dexterity: this.state.dexterity, constitution: this.state.constitution, wisdom: this.state.wisdom,
-    //   intelligence: this.state.intelligence, charisma: this.state.charisma };
+    const {
+      characterName, characterClass, race, alignment, level, experience, strength, dexterity, constitution, wisdom,
+      intelligence, charisma
+    } = this.state;
 
-    const { characterName, characterClass, race, alignment, level, experience, strength, dexterity, constitution, wisdom,
-    intelligence, charisma} = this.state;
-
-    axios.post('http://localhost:8080/character', { characterName, characterClass, race, alignment, level, experience, strength, dexterity,
-      constitution, wisdom, intelligence, charisma })
+    axios.post('http://localhost:8080/api/character', {
+      characterName, characterClass, race, alignment, level, experience, strength, dexterity,
+      constitution, wisdom, intelligence, charisma
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(res => {
-        this.setState({message : 'Character added successfully.'});
+        this.setState({message: 'Character added successfully.'});
         this.props.history.push("/")
       });
-  }
+  };
 
   onChange = (e) =>
     this.setState({ [e.target.name]: e.target.value });

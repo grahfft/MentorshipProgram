@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = { "http://localhost:3000"})
 @RestController
 @RequestMapping("/api")
 public class CharacterController {
@@ -30,7 +29,7 @@ public class CharacterController {
         return ResponseEntity.ok(this.characterService.GetCharacter(uuid));
     }
 
-    @PostMapping(value = "/character/{uuid}")
+    @PostMapping(value = "/character", produces = "application/json")
     public ResponseEntity<Character> CreateNewCharacter(@RequestBody Character character) {
         return ResponseEntity.ok(this.characterService.CreateCharacter(character));
     }
