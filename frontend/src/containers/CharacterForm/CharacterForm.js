@@ -25,7 +25,7 @@ class CharacterForm extends Component {
       charisma: '',
       message: null,
     };
-
+    this.onChange = this.onChange.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
   }
 
@@ -70,12 +70,15 @@ class CharacterForm extends Component {
     return (
       <div>
         <h5 className={'title'}>Character Information</h5>
-        <form>
-          <div className="form-group">
-            <label>Character Name: </label>
-            <input type="text" placeholder="Enter character name" name="characterName" value={this.state.characterName} onChange={this.onChange}/>
-          </div>
-
+        <form id={'character-form'}>
+          <Input
+            type={'text'}
+            title={'Character Name'}
+            name={'characterName'}
+            value={this.state.characterName}
+            handleChange={this.onChange}
+            placeholder={'Enter character name'}
+          />
           <Select
             title={'Class: '}
             name={'characterClass'}
@@ -100,53 +103,78 @@ class CharacterForm extends Component {
             handleChange={this.onChange}
             placeholder={'Select alignment'}
           />
-
-          <div className="form-group">
-            <label>Level: </label>
-            <input type="text" placeholder="Enter level" name="level" value={this.state.level} onChange={this.onChange}/>
-          </div>
-
-          <div className="form-group">
-            <label>Experience: </label>
-            <input type="text" placeholder="Enter experience" name="experience" value={this.state.experience} onChange={this.onChange}/>
-          </div>
-
-          <div className="form-group">
-            <label>Strength: </label>
-            <input type="text" placeholder="Enter strength" name="strength" value={this.state.strength} onChange={this.onChange}/>
-          </div>
-
-          <div className="form-group">
-            <label>Dexterity: </label>
-            <input type="text" placeholder="Enter dexterity" name="dexterity" value={this.state.dexterity} onChange={this.onChange}/>
-          </div>
-
-          <div className="form-group">
-            <label>Constitution: </label>
-            <input type="text" placeholder="Enter constitution" name="constitution" value={this.state.constitution} onChange={this.onChange}/>
-          </div>
-
-          <div className="form-group">
-            <label>Wisdom: </label>
-            <input type="text" placeholder="Enter wisdom" name="wisdom" value={this.state.wisdom} onChange={this.onChange}/>
-          </div>
-
-          <div className="form-group">
-            <label>Intelligence: </label>
-            <input type="text" placeholder="Enter intelligence" name="intelligence" value={this.state.intelligence} onChange={this.onChange}/>
-          </div>
-
-          <div className="form-group">
-            <label>Charisma: </label>
-            <input type="text" placeholder="Enter charisma" name="charisma" value={this.state.charisma} onChange={this.onChange}/>
-          </div>
-
-          <button className="btn btn-success" onClick={this.handleCreate}>Save</button>
+          <Input
+            type={'number'}
+            title={'Level'}
+            name={'level'}
+            value={this.state.level}
+            handleChange={this.onChange}
+            placeholder={'Enter value'}
+          />
+          <Input
+            type={'number'}
+            title={'Experience points'}
+            name={'experience'}
+            value={this.state.experience}
+            handleChange={this.onChange}
+            placeholder={'Enter value'}
+          />
+          <Input
+            type={'number'}
+            title={'Strength'}
+            name={'strength'}
+            value={this.state.strength}
+            handleChange={this.onChange}
+            placeholder={'Enter value'}
+          />
+          <Input
+            type={'number'}
+            title={'Dexterity'}
+            name={'dexterity'}
+            value={this.state.dexterity}
+            handleChange={this.onChange}
+            placeholder={'Enter value'}
+          />
+          <Input
+            type={'number'}
+            title={'Constitution'}
+            name={'constitution'}
+            value={this.state.constitution}
+            handleChange={this.onChange}
+            placeholder={'Enter value'}
+          />
+          <Input
+            type={'number'}
+            title={'Wisdom'}
+            name={'wisdom'}
+            value={this.state.wisdom}
+            handleChange={this.onChange}
+            placeholder={'Enter value'}
+          />
+          <Input
+            type={'number'}
+            title={'Intelligence'}
+            name={'intelligence'}
+            value={this.state.intelligence}
+            handleChange={this.onChange}
+            placeholder={'Enter value'}
+          />
+          <Input
+            type={'number'}
+            title={'Charisma'}
+            name={'charisma'}
+            value={this.state.charisma}
+            handleChange={this.onChange}
+            placeholder={'Enter value'}
+          />
+          <Button
+            title={'Create'}
+            action={this.handleCreate}
+          />
         </form>
       </div>
     );
   }
 }
-
 
 export default CharacterForm;
