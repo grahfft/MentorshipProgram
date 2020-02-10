@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Barbarian",
+    "abilities": [
+      {
+        "level": 1,
+        "description": "Rage - pg 48"
+      },
+      {
+        "level": 1,
+        "description": "Unarmored Defense - pg 48"
+      }
+    ]
+  }
+]

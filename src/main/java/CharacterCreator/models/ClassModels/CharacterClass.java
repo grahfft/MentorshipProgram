@@ -7,6 +7,5 @@ import lombok.Setter;
 @Getter
 public class CharacterClass {
     private String Name;
-    private CharacterSubclass SubClass;
     private ClassAbility[] Abilities;
 }

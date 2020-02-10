@@ -1,0 +1,12 @@
+[
+  {
+    "mainCharacterClass": "Barbarian",
+    "name": "Path of the Berserker",
+    "abilities": [
+      {
+        "level": 3,
+        "description": "Frenzy - pg 49"
+      }
+    ]
+  }
+]
