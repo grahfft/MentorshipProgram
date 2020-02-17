@@ -4,12 +4,43 @@
     "abilities": [
       {
         "level": 1,
-        "description": "Rage - pg 48"
+        "name": "Rage",
+        "description": "pg 48"
       },
       {
         "level": 1,
         "name": "Unarmored Defense",
         "description": "pg 48"
+      }
+    ]
+  },
+  {
+    "name": "Bard",
+    "abilities": [
+      {
+        "level": 1,
+        "name": "Bardic Inspiration",
+        "description": "pg 53"
+      },
+      {
+        "level": 2,
+        "name": "Jack of All Trades",
+        "description": "pg 54"
+      }
+    ]
+  },
+  {
+    "name": "Cleric",
+    "abilities": [
+      {
+        "level": 2,
+        "name": "Channel Divinity",
+        "description": "pg 58"
+      },
+      {
+        "level": 5,
+        "name": "Destroy Undead",
+        "description": "pg 55"
       }
     ]
   }

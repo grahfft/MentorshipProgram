@@ -9,5 +9,115 @@
         "description": "pg 49"
       }
     ]
+  },
+  {
+    "mainCharacterClass": "Barbarian",
+    "name": "Path of the Totem",
+    "abilities": [
+      {
+        "level": 3,
+        "name": "Spirit Seeker",
+        "description": "pg 50"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Bard",
+    "name": "College of Lore",
+    "abilities": [
+      {
+        "level": 3,
+        "name": "Bonus Proficiencies",
+        "description": "pg 54"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Bard",
+    "name": "College of Valor",
+    "abilities": [
+      {
+        "level": 3,
+        "name": "Bonus Proficiencies",
+        "description": "pg 54"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Cleric",
+    "name": "Knowledge Domain",
+    "abilities": [
+      {
+        "level": 1,
+        "name": "Blessings of Knowledge",
+        "description": "pg 58"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Cleric",
+    "name": "Life Domain",
+    "abilities": [
+      {
+        "level": 1,
+        "name": "Bonus Proficiency",
+        "description": "pg 60"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Cleric",
+    "name": "Light Domain",
+    "abilities": [
+      {
+        "level": 1,
+        "name": "Bonus Cantrip",
+        "description": "pg 61"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Cleric",
+    "name": "Nature Domain",
+    "abilities": [
+      {
+        "level": 1,
+        "name": "Acolyte of Nature",
+        "description": "pg 62"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Cleric",
+    "name": "Tempest Domain",
+    "abilities": [
+      {
+        "level": 1,
+        "name": "Bonus Proficiencies",
+        "description": "pg 62"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Cleric",
+    "name": "Trickery Domain",
+    "abilities": [
+      {
+        "level": 1,
+        "name": "Blessing of the Trickster",
+        "description": "pg 663"
+      }
+    ]
+  },
+  {
+    "mainCharacterClass": "Cleric",
+    "name": "War Domain",
+    "abilities": [
+      {
+        "level": 1,
+        "name": "Bonus Proficiencies",
+        "description": "pg 63"
+      }
+    ]
   }
 ]
