@@ -1,6 +1,6 @@
 package CharacterCreator.repositories.Interfaces;
 
-import CharacterCreator.models.Race;
+import CharacterCreator.RaceModels.Race;
 import java.util.List;
 
 public interface IRaceRepository {

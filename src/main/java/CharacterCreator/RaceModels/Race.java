@@ -1,6 +1,7 @@
-package CharacterCreator.models;
+package CharacterCreator.RaceModels;
 
 import CharacterCreator.Enums.CharacterSize;
+import CharacterCreator.models.StatBonuses;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,0 +1,32 @@
+[
+  {
+    "mainRace": "Dwarf",
+    "name": "Hill Dwarf",
+    "bonuses" : {
+      "strength": "0",
+      "dexterity": "0",
+      "constitution": "0",
+      "intelligence": "0",
+      "wisdom": "1",
+      "charisma": "0"
+    },
+    "abilities": [
+      "Dwarven Toughness"
+    ]
+  },
+  {
+    "mainRace": "Dwarf",
+    "name": "Mountain Dwarf",
+    "bonuses" : {
+      "strength": "2",
+      "dexterity": "0",
+      "constitution": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0"
+    },
+    "abilities": [
+      "Dwarven Armor Training"
+    ]
+  }
+]

@@ -5,8 +5,6 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class CharacterSubclass {
+public class CharacterSubclass extends CharacterClass {
     private String mainCharacterClass;
-    private String Name;
-    private ClassAbility[] Abilities;
 }

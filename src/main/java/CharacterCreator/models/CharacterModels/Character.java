@@ -5,7 +5,7 @@ import CharacterCreator.Enums.WeaponProficiency;
 import CharacterCreator.models.ClassModels.CharacterClass;
 import CharacterCreator.models.ClassModels.CharacterSubclass;
 import CharacterCreator.models.Feat;
-import CharacterCreator.models.Race;
+import CharacterCreator.RaceModels.Race;
 import lombok.Getter;
 import lombok.Setter;
 

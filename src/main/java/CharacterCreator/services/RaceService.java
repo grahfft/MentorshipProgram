@@ -1,6 +1,7 @@
 package CharacterCreator.services;
 
-import CharacterCreator.models.Race;
+import CharacterCreator.RaceModels.Race;
+import CharacterCreator.RaceModels.Subrace;
 import CharacterCreator.repositories.InMemoryRepositories.RaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,4 +21,6 @@ public class RaceService {
     public List<Race> getRaces() {
         return this.raceRepository.getRacesFromDatabase();
     }
+
+    public List<Subrace> getSubraces(String raceName) { return this.raceRepository.getSubracesFromDatabase(raceName); }
 }
