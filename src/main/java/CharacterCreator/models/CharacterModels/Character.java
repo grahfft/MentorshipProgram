@@ -1,5 +1,7 @@
 package CharacterCreator.models.CharacterModels;
 
+import CharacterCreator.Enums.ArmorProficiency;
+import CharacterCreator.Enums.WeaponProficiency;
 import CharacterCreator.models.ClassModels.CharacterClass;
 import CharacterCreator.models.ClassModels.CharacterSubclass;
 import CharacterCreator.models.Feat;
@@ -21,6 +23,8 @@ public class Character {
 
     private StatBlock StatBlock;
 
+    private Defenses Defenses;
+
     private CharacterClass CharacterClass;
 
     private CharacterSubclass CharacterSubclass;
@@ -28,4 +32,8 @@ public class Character {
     private Race Race;
 
     private List<Feat> Feats;
+
+    private List<ArmorProficiency> ArmorProficiencies;
+
+    private List<WeaponProficiency> WeaponProficiencies;
 }
