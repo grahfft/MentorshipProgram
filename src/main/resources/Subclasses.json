@@ -5,7 +5,8 @@
     "abilities": [
       {
         "level": 3,
-        "description": "Frenzy - pg 49"
+        "name": "Frenzy",
+        "description": "pg 49"
       }
     ]
   }

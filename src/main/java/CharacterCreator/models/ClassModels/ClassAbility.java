@@ -7,5 +7,6 @@ import lombok.Setter;
 @Getter
 public class ClassAbility {
     private int Level;
+    private String Name;
     private String Description;
 }

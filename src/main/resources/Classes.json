@@ -8,7 +8,8 @@
       },
       {
         "level": 1,
-        "description": "Unarmored Defense - pg 48"
+        "name": "Unarmored Defense",
+        "description": "pg 48"
       }
     ]
   }

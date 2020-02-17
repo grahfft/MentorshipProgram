@@ -1,6 +1,7 @@
 package CharacterCreator.models.CharacterModels;
 
 import CharacterCreator.models.ClassModels.CharacterClass;
+import CharacterCreator.models.ClassModels.CharacterSubclass;
 import CharacterCreator.models.Feat;
 import CharacterCreator.models.Race;
 import lombok.Getter;
@@ -21,6 +22,8 @@ public class Character {
     private StatBlock StatBlock;
 
     private CharacterClass CharacterClass;
+
+    private CharacterSubclass CharacterSubclass;
 
     private Race Race;
 
