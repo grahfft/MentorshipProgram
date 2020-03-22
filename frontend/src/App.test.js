@@ -13,7 +13,7 @@ describe('App', () => {
     expect(wrapper.find('.title')).toHaveLength(1);
   });
 
-  it('renders CharacterForm container', () => {
+  it('renders CharacterAddForm container', () => {
     expect(wrapper.find('CharacterForm')).toHaveLength(1);
   });
 });

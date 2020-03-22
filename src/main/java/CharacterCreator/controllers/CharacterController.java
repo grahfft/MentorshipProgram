@@ -34,13 +34,13 @@ public class CharacterController {
         return ResponseEntity.ok(this.characterService.CreateCharacter(character));
     }
 
-    @PatchMapping(value = "/character{uuid}")
+    @PatchMapping(value = "/character/{uuid}")
     public ResponseEntity<?> UpdateNewCharacter(@RequestBody Character character) {
         this.characterService.UpdateCharacter(character);
         return ResponseEntity.ok("Character updated");
     }
 
-    @DeleteMapping(value = "/character{uuid}")
+    @DeleteMapping(value = "/character/{uuid}")
     public ResponseEntity<?> DeleteCharacter(@PathVariable String uuid) {
         this.characterService.DeleteCharacter(uuid);
         return ResponseEntity.ok("Delete Successful");

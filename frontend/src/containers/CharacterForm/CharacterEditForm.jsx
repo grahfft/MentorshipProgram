@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 import Button from '../../components/Button';
+import ApiService from "../../service/ApiService";
 
-class CharacterForm extends Component {
-  constructor(props){
+class CharacterEditForm extends Component {
+  constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
+      id: this.props.match.params.id,
       characterName: '',
       characterClass: '',
       classOptions: [],
@@ -23,13 +24,29 @@ class CharacterForm extends Component {
       wisdom: '',
       intelligence: '',
       charisma: '',
-      message: null,
+      message: null
     };
     this.onChange = this.onChange.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
   }
 
   componentDidMount() {
+    ApiService.fetchCharacter(this.state.id)
+      .then(response => this.setState({
+        characterName: response.data.characterName,
+        characterClass: response.data.characterClass,
+        race: response.data.race,
+        alignment: response.data.alignment,
+        level: response.data.level,
+        experience: response.data.experience,
+        strength: response.data.strength,
+        dexterity: response.data.dexterity,
+        constitution: response.data.constitution,
+        wisdom: response.data.wisdom,
+        intelligence: response.data.intelligence,
+        charisma: response.data.charisma
+      }));
+
     fetch('./options.json')
       .then(res => res.json())
       .then(data => {
@@ -41,26 +58,9 @@ class CharacterForm extends Component {
       });
   }
 
-  handleCreate = async (e) => {
-    e.preventDefault();
-
-    const {
-      characterName, characterClass, race, alignment, level, experience, strength, dexterity, constitution, wisdom,
-      intelligence, charisma
-    } = this.state;
-
-    axios.post('http://localhost:8080/api/character', {
-      characterName, characterClass, race, alignment, level, experience, strength, dexterity,
-      constitution, wisdom, intelligence, charisma
-    }, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(res => {
-        this.setState({message: 'Character added successfully.'});
-        this.props.history.push("/")
-      });
+  handleEdit = (e) => {
+    ApiService.updateCharacter(this.state.id)
+      .then(() => this.props.history.push('/characters'))
   };
 
   onChange = (e) =>
@@ -169,7 +169,7 @@ class CharacterForm extends Component {
           />
           <Button
             title={'Create'}
-            action={this.handleCreate}
+            action={this.handleEdit}
           />
         </form>
       </div>
@@ -177,4 +177,4 @@ class CharacterForm extends Component {
   }
 }
 
-export default CharacterForm;
+export default CharacterEditForm;

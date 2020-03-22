@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CharacterForm from './CharacterForm';
+import CharacterAddForm from './CharacterAddForm';
 
-describe('CharacterForm', () => {
+describe('CharacterAddForm', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<CharacterForm />);
+    wrapper = shallow(<CharacterAddForm />);
   });
 
   it('renders without error', () => {

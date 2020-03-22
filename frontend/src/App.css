@@ -1,12 +1,14 @@
+@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
+
 .title {
   display: flex;
   justify-content: center;
 }
 
-.app-container {
-  height: 100vh;
-  width: 100vw;
-  align-items: flex-start;
-  display: flex;
-  justify-content: center;
-}
+/*.app-container {*/
+/*  height: 100vh;*/
+/*  width: 100vw;*/
+/*  align-items: flex-start;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*}*/
