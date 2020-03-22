@@ -17,7 +17,7 @@ class ApiService {
   }
 
   createCharacter() {
-    return axios.post(`${API_URL}/character/`);
+    return axios.post(`${API_URL}/character`);
   }
 
   deleteCharacter(id) {

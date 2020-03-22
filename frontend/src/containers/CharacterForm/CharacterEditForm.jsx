@@ -27,7 +27,7 @@ class CharacterEditForm extends Component {
       message: null
     };
     this.onChange = this.onChange.bind(this);
-    this.handleCreate = this.handleCreate.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount() {

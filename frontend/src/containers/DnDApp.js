@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ListCharacters from "./ListCharacters";
 import CharacterEditForm from "./CharacterForm/CharacterEditForm";
 import CharacterAddForm from "./CharacterForm/CharacterAddForm";
@@ -13,11 +13,12 @@ class DnDApp extends Component {
         </div>
         <div className={'container'}>
           <Router>
-            <div>
-              <Route exact path='/characters' component={ListCharacters} />
+            <Switch>
+              <Route path='/' exact component={ListCharacters} />
+              <Route path='/characters' component={ListCharacters} />
               <Route path='/character/:id' component={CharacterEditForm} />
               <Route path='/character/create' component={CharacterAddForm} />
-            </div>
+            </Switch>
           </Router>
           <ListCharacters />
         </div>
