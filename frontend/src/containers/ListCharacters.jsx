@@ -18,15 +18,16 @@ class ListCharacters extends Component {
 
   componentDidMount() {
     this.loadCharacterList();
+    console.log("I finished mounting")
   }
 
   loadCharacterList() {
     ApiService.fetchAllCharacters()
       .then(res => {
-        this.setState({ characters: res.data });
-        console.log(this.state.characters);
-      });
-  }
+          this.setState({characters: res.data});
+          console.log(this.state.characters);
+        })
+  };
 
   deleteCharacter(characterId) {
     ApiService.deleteCharacter(characterId)
@@ -45,6 +46,7 @@ class ListCharacters extends Component {
   }
 
   render() {
+    console.log("I am rendering")
     return (
       <div>
         <Button
@@ -55,12 +57,13 @@ class ListCharacters extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th className='hidden'>Id</th>
               <th>Name</th>
               <th>Class</th>
               <th>Race</th>
               <th>Level</th>
-              <th>Experience</th>
+              {/*<th>Experience</th>*/}
+              <th>Delete</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -68,23 +71,25 @@ class ListCharacters extends Component {
               this.state.characters.map(
                 character =>
                   <tr key={character.id}>
-                    <td>{character.name}</td>
+                    <td key={character.name}>{character.name}</td>
                     <td>{character.className}</td>
                     <td>{character.race}</td>
-                    <td>{character.level}</td>
-                    <td>{character.experience}</td>
-                    <td>
-                      <Button
-                        title={'Delete'}
-                        action={this.deleteCharacter(character.id)}
-                      />
-                      <Button
-                        title={"Edit"}
-                        action={this.editCharacter(character.id)}
-                      />
-                      {/*<button className="btn btn-success" onClick={() => this.deleteCharacter(character.id)}>Delete</button>*/}
-                      {/*<button className="btn btn-success" onClick={() => this.editCharacter(character.id)}>Edit</button>*/}
-                    </td>
+                    <td key={character.level}>{character.level}</td>
+                    {/*<td>{character.experience}</td>*/}
+                    {/*<td>*/}
+                    {/*  <Button*/}
+                    {/*    title={'Delete'}*/}
+                    {/*    action={this.deleteCharacter(character.id)}*/}
+                    {/*  />*/}
+                    {/*</td>*/}
+                    {/*<td>*/}
+                    {/*  <Button*/}
+                    {/*    title={"Edit"}*/}
+                    {/*    action={this.editCharacter(character.id)}*/}
+                    {/*  />*/}
+                    <td><button className="btn btn-success" onClick={() => this.deleteCharacter(character.id)}>Delete</button></td>
+                    <td><button className="btn btn-success" onClick={() => this.editCharacter(character.id)}>Edit</button></td>
+                    {/*</td>*/}
                   </tr>
               )
             }

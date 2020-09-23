@@ -10,9 +10,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000")
 public class CharacterController {
 
-    private CharacterService characterService;
+    private final CharacterService characterService;
 
     @Autowired
     public CharacterController(CharacterService characterService) {

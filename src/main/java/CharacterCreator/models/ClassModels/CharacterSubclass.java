@@ -7,4 +7,8 @@ import lombok.Setter;
 @Getter
 public class CharacterSubclass extends CharacterClass {
     private String mainCharacterClass;
+
+    public CharacterSubclass(String name) {
+        super(name);
+    }
 }

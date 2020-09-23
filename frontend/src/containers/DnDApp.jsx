@@ -16,11 +16,10 @@ class DnDApp extends Component {
             <Switch>
               <Route path='/' exact component={ListCharacters} />
               <Route path='/characters' component={ListCharacters} />
-              <Route path='/character/:id' component={CharacterEditForm} />
               <Route path='/character/create' component={CharacterAddForm} />
+              <Route path='/character/:id' component={CharacterEditForm} />
             </Switch>
           </Router>
-          <ListCharacters />
         </div>
       </div>
     );

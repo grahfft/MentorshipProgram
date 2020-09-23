@@ -11,14 +11,14 @@ import java.util.Map;
 
 @Repository
 public class CharacterRepository implements ICharacterRepository {
-    private Map<String, Character> SavedCharacters;
+    private final Map<String, Character> SavedCharacters;
 
     public CharacterRepository() {
         this.SavedCharacters = new Hashtable<>();
     }
 
     public void saveCharacterToDatabase(Character character) {
-        this.SavedCharacters.put(character.getUuid(), character);
+//        this.SavedCharacters.put(character.getUuid(), character);
     }
 
     public List<Character> getAllCharactersFromDatabase() {

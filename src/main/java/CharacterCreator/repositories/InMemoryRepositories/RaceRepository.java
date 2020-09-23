@@ -1,7 +1,7 @@
 package CharacterCreator.repositories.InMemoryRepositories;
 
-import CharacterCreator.RaceModels.Race;
-import CharacterCreator.RaceModels.Subrace;
+import CharacterCreator.models.RaceModels.Race;
+import CharacterCreator.models.RaceModels.Subrace;
 import CharacterCreator.repositories.Interfaces.IRaceRepository;
 import org.springframework.stereotype.Repository;
 

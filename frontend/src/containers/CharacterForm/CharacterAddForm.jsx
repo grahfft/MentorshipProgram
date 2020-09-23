@@ -10,11 +10,13 @@ class CharacterAddForm extends Component {
     this.state ={
       characterName: '',
       characterClass: '',
-      classOptions: [],
+      classOptions: ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Mystic", "Paladin",
+        "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"],
       race: '',
-      raceOptions: [],
+      raceOptions: ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"],
       alignment: '',
-      alignmentOptions: [],
+      alignmentOptions: ["Lawful good", "Neutral good", "Chaotic good", "Lawful neutral", "Neutral", "Chaotic neutral",
+        "Lawful evil", "Neutral evil", "Chaotic evil"],
       level: '',
       experience: '',
       strength: '',
@@ -29,17 +31,21 @@ class CharacterAddForm extends Component {
     this.handleCreate = this.handleCreate.bind(this);
   }
 
-  componentDidMount() {
-    fetch('./options.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          classOptions: data.classOptions,
-          raceOptions: data.raceOptions,
-          alignmentOptions: data.alignmentOptions
-        });
-      });
-  }
+  // componentDidMount() {
+  //   fetch('./options.json', {
+  //     headers : {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //     }})
+  //     .then(res => res.json())
+  //       .then(data => {
+  //       this.setState({
+  //         classOptions: data.classOptions,
+  //         raceOptions: data.raceOptions,
+  //         alignmentOptions: data.alignmentOptions
+  //       });
+  //     });
+  // }
 
   // handleCreate = async (e) => {
   //   e.preventDefault();

@@ -35,7 +35,7 @@ class CharacterEditForm extends Component {
       .then(response => this.setState({
         characterName: response.data.characterName,
         characterClass: response.data.characterClass,
-        race: response.data.race,
+        race: response.data.characterRace,
         alignment: response.data.alignment,
         level: response.data.level,
         experience: response.data.experience,
@@ -168,7 +168,7 @@ class CharacterEditForm extends Component {
             placeholder={'Enter value'}
           />
           <Button
-            title={'Create'}
+            title={'Edit'}
             action={this.handleEdit}
           />
         </form>

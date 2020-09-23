@@ -8,4 +8,8 @@ import lombok.Setter;
 public class CharacterClass {
     private String Name;
     private ClassAbility[] Abilities;
+
+    public CharacterClass(String name) {
+        this.Name = name;
+    }
 }

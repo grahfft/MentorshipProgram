@@ -5,7 +5,7 @@ import CharacterCreator.Enums.WeaponProficiency;
 import CharacterCreator.models.ClassModels.CharacterClass;
 import CharacterCreator.models.ClassModels.CharacterSubclass;
 import CharacterCreator.models.Feat;
-import CharacterCreator.RaceModels.Race;
+import CharacterCreator.models.RaceModels.Race;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 public class Character {
 
-    private String Uuid;
+    private Integer Uuid;
 
     private String Name;
 
@@ -27,13 +27,21 @@ public class Character {
 
     private CharacterClass CharacterClass;
 
-    private CharacterSubclass CharacterSubclass;
+//    private CharacterSubclass CharacterSubclass;
 
-    private Race Race;
+    private Race CharacterRace;
 
     private List<Feat> Feats;
 
     private List<ArmorProficiency> ArmorProficiencies;
 
     private List<WeaponProficiency> WeaponProficiencies;
+
+    public Character(Integer uuid, String name, CharacterClass characterClass, Race characterRace, Integer level) {
+        this.Uuid = uuid;
+        this.Name = name;
+        this.CharacterClass = characterClass;
+        this.CharacterRace = characterRace;
+        this.Level = level;
+    }
 }

@@ -1,4 +1,4 @@
-package CharacterCreator.RaceModels;
+package CharacterCreator.models.RaceModels;
 
 import CharacterCreator.Enums.CharacterSize;
 import CharacterCreator.models.StatBonuses;
@@ -16,4 +16,8 @@ public class Race {
     private StatBonuses Bonuses;
     private String[] Abilities;
     private CharacterSize Size;
+
+    public Race(String name) {
+        this.Name = name;
+    }
 }
