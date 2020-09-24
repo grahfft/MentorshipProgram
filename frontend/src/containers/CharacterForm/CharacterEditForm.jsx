@@ -12,7 +12,7 @@ class CharacterEditForm extends Component {
       characterName: '',
       characterClass: '',
       classOptions: [],
-      race: '',
+      characterRace: '',
       raceOptions: [],
       alignment: '',
       alignmentOptions: [],
@@ -35,7 +35,7 @@ class CharacterEditForm extends Component {
       .then(response => this.setState({
         characterName: response.data.characterName,
         characterClass: response.data.characterClass,
-        race: response.data.characterRace,
+        characterRace: response.data.characterRace,
         alignment: response.data.alignment,
         level: response.data.level,
         experience: response.data.experience,
@@ -90,7 +90,7 @@ class CharacterEditForm extends Component {
           <Select
             title={'Race: '}
             name={'race'}
-            value={this.state.race}
+            value={this.state.characterRace}
             options={this.state.raceOptions}
             handleChange={this.onChange}
             placeholder={'Select race'}

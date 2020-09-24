@@ -12,7 +12,7 @@ class CharacterAddForm extends Component {
       characterClass: '',
       classOptions: ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Mystic", "Paladin",
         "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"],
-      race: '',
+      characterRace: '',
       raceOptions: ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"],
       alignment: '',
       alignmentOptions: ["Lawful good", "Neutral good", "Chaotic good", "Lawful neutral", "Neutral", "Chaotic neutral",
@@ -101,7 +101,7 @@ class CharacterAddForm extends Component {
           <Select
             title={'Race: '}
             name={'race'}
-            value={this.state.race}
+            value={this.state.characterRace}
             options={this.state.raceOptions}
             handleChange={this.onChange}
             placeholder={'Select race'}

@@ -53,7 +53,7 @@ class ListCharacters extends Component {
           title={'Create'}
           action={this.addCharacter}
         />
-        {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
+        {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
         <table className="table table-striped">
           <thead>
             <tr>
@@ -70,11 +70,11 @@ class ListCharacters extends Component {
             {
               this.state.characters.map(
                 character =>
-                  <tr key={character.id}>
-                    <td key={character.name}>{character.name}</td>
-                    <td>{character.className}</td>
-                    <td>{character.race}</td>
-                    <td key={character.level}>{character.level}</td>
+                  <tr key={character.uuid}>
+                    <td>{character.name}</td>
+                    <td>{character.characterClass.name}</td>
+                    <td>{character.characterRace.name}</td>
+                    <td>{character.level}</td>
                     {/*<td>{character.experience}</td>*/}
                     {/*<td>*/}
                     {/*  <Button*/}
