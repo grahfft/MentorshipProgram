@@ -20,8 +20,8 @@ class ApiService {
     return axios.post(`${API_URL}/character`);
   }
 
-  deleteCharacter(id) {
-    return axios.delete(`${API_URL}/character/${id}`);
+  deleteCharacter(uuid) {
+    return axios.delete(`${API_URL}/character/${uuid}`);
   }
 }
 

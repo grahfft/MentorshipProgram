@@ -100,7 +100,7 @@ class CharacterAddForm extends Component {
           />
           <Select
             title={'Race: '}
-            name={'race'}
+            name={'characterRace'}
             value={this.state.characterRace}
             options={this.state.raceOptions}
             handleChange={this.onChange}

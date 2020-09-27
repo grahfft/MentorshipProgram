@@ -26,7 +26,7 @@ public class CharacterController {
     }
 
     @GetMapping(value = "/character/{uuid}")
-    public ResponseEntity<Character> GetCharacterByUuid(@PathVariable String uuid) {
+    public ResponseEntity<Character> GetCharacterByUuid(@PathVariable int uuid) {
         return ResponseEntity.ok(this.characterService.GetCharacter(uuid));
     }
 
@@ -42,7 +42,7 @@ public class CharacterController {
     }
 
     @DeleteMapping(value = "/character/{uuid}")
-    public ResponseEntity<?> DeleteCharacter(@PathVariable String uuid) {
+    public ResponseEntity<?> DeleteCharacter(@PathVariable int uuid) {
         this.characterService.DeleteCharacter(uuid);
         return ResponseEntity.ok("Delete Successful");
     }

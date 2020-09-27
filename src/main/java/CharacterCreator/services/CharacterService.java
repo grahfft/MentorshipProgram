@@ -5,6 +5,7 @@ import CharacterCreator.models.ClassModels.CharacterClass;
 import CharacterCreator.models.RaceModels.Race;
 import CharacterCreator.repositories.InMemoryRepositories.CharacterRepository;
 import CharacterCreator.repositories.Interfaces.ICharacterRepository;
+import com.sun.tools.javac.comp.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,8 +38,12 @@ public class CharacterService {
         return characters;
     }
 
-    public Character GetCharacter(String uuid) {
-        return this.characterRepository.getCharacterFromDatabase(uuid);
+    public Character GetCharacter(int uuid) {
+        for(Character character: characters) {
+            if(character.getUuid() == uuid) return character;
+        }
+        return null;
+//        return this.characterRepository.getCharacterFromDatabase(uuid);
     }
 
     public Character CreateCharacter(Character character) {
@@ -54,9 +59,11 @@ public class CharacterService {
         this.characterRepository.saveCharacterToDatabase(character);
     }
 
-    public void DeleteCharacter(String uuid) {
+    public void DeleteCharacter(int uuid) {
         // TODO spin up new thread to delete character
-        this.characterRepository.deleteCharacterFromDatabase(uuid);
+        Character character = GetCharacter(uuid);
+        if(character != null) characters.remove(character);
+//        this.characterRepository.deleteCharacterFromDatabase(uuid);
     }
 
     protected String getRandomUuid() {

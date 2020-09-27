@@ -29,11 +29,11 @@ class ListCharacters extends Component {
         })
   };
 
-  deleteCharacter(characterId) {
-    ApiService.deleteCharacter(characterId)
-      .then(res => {
+  deleteCharacter(uuid) {
+    ApiService.deleteCharacter(uuid)
+      .then(() => {
         this.setState({message : 'Character deleted successfully.'});
-        this.setState({characters: this.state.characters.filter(character => character.id !== characterId)});
+        this.setState({characters: this.state.characters.filter(character => character.uuid !== uuid)});
       })
   }
 
@@ -87,8 +87,8 @@ class ListCharacters extends Component {
                     {/*    title={"Edit"}*/}
                     {/*    action={this.editCharacter(character.id)}*/}
                     {/*  />*/}
-                    <td><button className="btn btn-success" onClick={() => this.deleteCharacter(character.id)}>Delete</button></td>
-                    <td><button className="btn btn-success" onClick={() => this.editCharacter(character.id)}>Edit</button></td>
+                    <td><button className="btn btn-success" onClick={() => this.deleteCharacter(character.uuid)}>Delete</button></td>
+                    <td><button className="btn btn-success" onClick={() => this.editCharacter(character.uuid)}>Edit</button></td>
                     {/*</td>*/}
                   </tr>
               )
