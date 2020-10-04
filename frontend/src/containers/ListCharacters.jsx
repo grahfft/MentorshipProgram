@@ -37,8 +37,8 @@ class ListCharacters extends Component {
       })
   }
 
-  editCharacter(characterId) {
-    this.props.history.push(`/character/${characterId}`);
+  editCharacter(uuid) {
+    this.props.history.push(`/character/${uuid}`);
   }
 
   addCharacter() {
@@ -87,8 +87,8 @@ class ListCharacters extends Component {
                     {/*    title={"Edit"}*/}
                     {/*    action={this.editCharacter(character.id)}*/}
                     {/*  />*/}
-                    <td><button className="btn btn-success" onClick={() => this.deleteCharacter(character.uuid)}>Delete</button></td>
                     <td><button className="btn btn-success" onClick={() => this.editCharacter(character.uuid)}>Edit</button></td>
+                    <td><button className="btn btn-warning" onClick={() => this.deleteCharacter(character.uuid)}>Delete</button></td>
                     {/*</td>*/}
                   </tr>
               )

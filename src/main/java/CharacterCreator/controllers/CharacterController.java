@@ -2,10 +2,14 @@ package CharacterCreator.controllers;
 
 import CharacterCreator.models.CharacterModels.Character;
 import CharacterCreator.services.CharacterService;
+import com.sun.tools.javac.comp.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -35,10 +39,10 @@ public class CharacterController {
         return ResponseEntity.ok(this.characterService.CreateCharacter(character));
     }
 
-    @PatchMapping(value = "/character/{uuid}")
-    public ResponseEntity<?> UpdateNewCharacter(@RequestBody Character character) {
-        this.characterService.UpdateCharacter(character);
-        return ResponseEntity.ok("Character updated");
+    @PutMapping(value = "/character/{uuid}")
+    public ResponseEntity<Character> UpdateNewCharacter(@PathVariable String uuid, @RequestBody Character character) {
+        Character updatedChar = this.characterService.UpdateCharacter(character);
+        return new ResponseEntity<>(updatedChar, HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/character/{uuid}")

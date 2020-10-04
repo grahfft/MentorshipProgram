@@ -48,21 +48,26 @@ public class CharacterService {
 
     public Character CreateCharacter(Character character) {
 //        character.setUuid(this.getRandomUuid());
-
-        //TODO spin up new thread to save
-        this.characterRepository.saveCharacterToDatabase(character);
+        character.setUuid(++idCounter);
+        characters.add(character);
         return character;
+        //TODO spin up new thread to save
+//        this.characterRepository.saveCharacterToDatabase(character);
+//        return character;
     }
 
-    public void UpdateCharacter(Character character) {
+    public Character UpdateCharacter(Character character) {
+        DeleteCharacter(character.getUuid());
+        characters.add(character);
+        return character;
         // TODO spin up new thread to save character
-        this.characterRepository.saveCharacterToDatabase(character);
+//        this.characterRepository.saveCharacterToDatabase(character);
     }
 
     public void DeleteCharacter(int uuid) {
-        // TODO spin up new thread to delete character
         Character character = GetCharacter(uuid);
         if(character != null) characters.remove(character);
+        // TODO spin up new thread to delete character
 //        this.characterRepository.deleteCharacterFromDatabase(uuid);
     }
 

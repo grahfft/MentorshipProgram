@@ -21,9 +21,9 @@ public class Character {
 
     private Integer Level;
 
-    private StatBlock StatBlock;
-
-    private Defenses Defenses;
+//    private StatBlock StatBlock;
+//
+//    private Defenses Defenses;
 
     private CharacterClass CharacterClass;
 
@@ -31,11 +31,11 @@ public class Character {
 
     private Race CharacterRace;
 
-    private List<Feat> Feats;
-
-    private List<ArmorProficiency> ArmorProficiencies;
-
-    private List<WeaponProficiency> WeaponProficiencies;
+//    private List<Feat> Feats;
+//
+//    private List<ArmorProficiency> ArmorProficiencies;
+//
+//    private List<WeaponProficiency> WeaponProficiencies;
 
     public Character(Integer uuid, String name, CharacterClass characterClass, Race characterRace, Integer level) {
         this.Uuid = uuid;

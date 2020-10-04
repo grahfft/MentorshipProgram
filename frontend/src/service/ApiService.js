@@ -8,16 +8,16 @@ class ApiService {
     return axios.get(`${API_URL}/characters`);
   }
 
-  fetchCharacter(id) {
-    return axios.get(`${API_URL}/character/${id}`);
+  fetchCharacter(uuid) {
+    return axios.get(`${API_URL}/character/${uuid}`);
   }
 
-  updateCharacter(id) {
-    return axios.patch(`${API_URL}/character/${id}`);
+  updateCharacter(uuid, character) {
+    return axios.put(`${API_URL}/character/${uuid}`, character);
   }
 
-  createCharacter() {
-    return axios.post(`${API_URL}/character`);
+  createCharacter(character) {
+    return axios.post(`${API_URL}/character`, character)
   }
 
   deleteCharacter(uuid) {
